@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+{% form_theme formArticle 'bootstrap_5_layout.html.twig' %}
+
+{% block title %}Add/Edit Article{% endblock %}
+
+{% block body %} 
+
+<!-- Title -->
+
+{% if editMode %}
+
+    <hr class="hrmargintop">
+    <h1 class="titreedit">Edit Gallery</h1>
+    <hr class="hrmarginbot">
+
+{% else %}
+
+    <hr class="hrmargintop">
+    <h1 class="titreedit">Add Gallery</h1>
+    <hr class="hrmarginbot">
+
+{% endif %}
+
+    <div class="formcontainarticle">
+        <div class="formblockarticle">
+            {{ form(formArticle) }}
+        </div>
+    </div>
+
+    <hr class="hrmargindouble">
+
+{% endblock %}

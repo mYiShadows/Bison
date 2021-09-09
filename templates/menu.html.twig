@@ -1,0 +1,8 @@
+<!-- Dropdown list "Projets" in Menu navbar -->
+
+<!-- Root: Controller/ProjetController.php -->
+
+{% for projet in projets %}
+    <a class="dropdown-item menuderoulant" href="{{ path('projet_show', {'id': projet.id}) }}">{{ projet.titreProjet }}</a>
+    <hr class="hrmenuderoulant">
+{% endfor %}

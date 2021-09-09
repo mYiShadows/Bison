@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gallery Zoom{% endblock %}
+
+{% block body %}
+
+    <!-- Menu Title -->
+
+    <hr class="hrmargindouble">
+    <div class="titlebanniere">
+        <div class="titleshow">
+            <div class="gold">|</div>
+            <div class="white">GALLERY</div>
+            <div class="gold">{{article.titre}}</div>
+        </div>
+    </div>
+
+
+    <hr class="hrmargindouble">
+
+    <!-- If User On or Not -->
+
+    <!-- Panel Edit -->
+
+    {% if app.user %}
+        <center class="editshow">
+            <a class="btn btn-dark" href="{{ path('articles_index')}}"><i class="fas fa-arrow-left"></i> Return</a>
+            <a class="btn btn-dark" href="{{ path('article_edit' , {'id' :article.id})}}"><i class="fas fa-edit"></i> Edit</a>
+            <a class="btn btn-dark" href="{{ path('article_delete' , {'id' :article.id})}}"><i class="fas fa-trash-alt"></i> Delete</a>
+        </center>
+    {% else %}
+        <center class="editshow">
+            <a class="btn btn-dark" href="{{ path('articles_index')}}"><i class="fas fa-arrow-left"></i> Return</a>
+        </center>
+    {% endif %}
+
+    <!-- Images Article -->
+
+    <div class="centerimgshow">
+            <img class="imgshow img-fluid" src="{{article.url}}" alt=""></img>
+
+    </div>
+
+        <h5 class="dateshow">Mise en ligne le {{article.createdAt | date('d/m/Y')}}</h5>
+        <hr class="hrmargindouble">
+
+        <!-- Block Box -->
+
+        <div class="boxshow img-fluid">
+            <div class="miniboxshow">
+                <h5 class="miniboxshowpadding">|</h5>
+                <h5>ANNEE</h5>
+                <h5 class="miniboxgold gold">{{article.annee}}</h5>
+            </div>
+            <div class="miniboxshow">
+                <h5 class="miniboxshowpadding">|</h5>
+                <h5>LOCATION</h5>
+                <h5 class="miniboxgold gold">{{article.location}}</h5>
+            </div>
+            <div class="miniboxshow">
+                <h5 class="miniboxshowpadding">|</h5>
+                <h5>CLIENT</h5>
+                <h5 class="miniboxgold gold">{{article.client}}</h5>
+            </div>
+            <div class="miniboxshow">
+                <h5 class="miniboxshowpadding">|</h5>
+                <h5>CREATEUR</h5>
+                <h5 class="miniboxgold gold">{{article.createur}}</h5>
+            </div>
+        </div>
+        <hr class="hrmargindouble">
+
+        <!-- Block Footer -->
+
+        <center>
+            <div class="blocfooter">
+                    <div class="sousblocfooter">
+                                    <img src="https://i.ibb.co/Q6X0BZp/Noirtransparent.png" alt="" class="logoblanc"/>
+                    </div>
+                    <div class="sousblocfooter">
+                            <div>+33741881818</div>
+                            <div>shadow-projet@entreprise.fr</div>
+                            <div>67000 Strasbourg, 10 rue des champs, FRA </div>
+                    </div>
+            </div>
+            <div class="logoreseau">
+                    <a href=""><i class="fab fa-linkedin-in fa-2x black"></i></a>
+                    <a href=""><i class="fab fa-tiktok fa-2x black"></i></a>
+            </div>
+            </center>
+    
+            <!-- Copyright-->
+
+            <hr class="hrmargintop">
+            <div class="copyright black">
+                    <div>2021 SHADOW ARCHITECTURE. ALL RIGHTS RESERVED.</div>
+                    <div>DESIGNED BY SHADOW THEMES.</div>
+            </div>
+{% endblock %}

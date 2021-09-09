@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List of acceuil{% endblock %}
+
+{% block body %}
+
+    <!-- Title -->
+
+    <hr class="hrtop">
+    <h1 class="titreedit">List Home</h1>
+    <hr class="hrmarginbot">
+
+    <!-- Table Home -->
+
+    <table class="table table-dark table-bordered table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Url</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+
+        <!-- Link in Loop -->
+
+        {% for acceuil in acceuils %}
+            <tbody>
+                <tr>
+                <th scope="row">{{ acceuil.id }}</th>
+                <td>{{ acceuil.titre }}</td>
+                <td>{{ acceuil.image }}</td>
+                <td>
+                    <a class="faedit" href="{{ path('acceuil_edit' , {'id' :acceuil.id})}}"> <i class="fas fa-edit"></i>
+                </td>
+                <td>
+                    <a class="fasuppr" href="{{ path('acceuil_delete' , {'id' :acceuil.id})}}"> <i class="fas fa-trash-alt"></i></a>
+                </td>
+                </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+{% endblock %}

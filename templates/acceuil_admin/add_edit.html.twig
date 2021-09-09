@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+{% form_theme formAcceuil 'bootstrap_5_layout.html.twig' %}
+
+{% block title %}Add/Edit image in home{% endblock %}
+
+{% block body %} 
+
+<!-- Title If Edit Mode -->
+
+{% if editMode %}
+
+    <hr class="hrmargintop">
+    <h1 class="titreedit">Edit Carousel Home</h1>
+    <hr class="hrmarginbot">
+
+{% else %}
+
+    <hr class="hrmargintop">
+    <h1 class="titreedit">Add Carousel Home</h1>
+    <hr class="hrmarginbot">
+
+{% endif %}
+
+    <!-- Block add/edit Home -->
+
+    <div class="formcontain-acceuil">
+        <div class="formblock-acceuil">
+            {{ form(formAcceuil) }} 
+        </div>
+    </div>
+    <hr class="hrmargindouble">
+
+{% endblock %}

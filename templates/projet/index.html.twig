@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projets{% endblock %}
+
+{% block body %}
+    <hr class="hrarticle">
+    <div class="titre titregalerie img-fluid">
+            <div>|</div>
+            <div>PROJETS</div>
+    </div>
+    <hr class="hrarticle">
+
+    <!-- NavBar Galerie -->
+
+    <div class="navigation">{{ knp_pagination_render(pagination) }}</div>
+    
+    <div class="projet">
+
+    <!-- Boucle sur les articles en BD -->
+
+    {% for projet in pagination %}
+        <div class="blocarticle hover12">
+                <i class="fas fa-arrow-right fa-4x"></i>
+                <figure>
+                        <a href="{{ path('projet_show', {'id': projet.id}) }}" class=""><img class="imgprojet hover12" src="{{ projet.imageAffichageProjet }}" alt="Photo"/></a>
+                </figure>  
+                <div class="miniboxgold">
+                        <h1 class="h3projet gold">|</h1>
+                        <h5 class="h5projet gold">{{ projet.titreProjet }}</h5>
+                        <h5 class="gold">{{projet.anneeProjet}}</h5> 
+                </div>
+        </div>
+    {% endfor %}
+    </div>
+
+    <!-- NavBar Galerie -->
+
+    <div class="navigation">{{ knp_pagination_render(pagination) }}</div>
+
+    <hr class="hrarticle">
+
+    <!-- Bloc Footer -->
+    <center>
+        <div class="blocfooter">
+                <div class="sousblocfooter">
+                                <img src="https://i.ibb.co/Q6X0BZp/Noirtransparent.png" alt="" class="logoblanc"/>
+                </div>
+                <div class="sousblocfooter">
+                        <div>+33741881818</div>
+                        <div>shadow-projet@entreprise.fr</div>
+                        <div>67000 Strasbourg, 10 rue des champs, FRA </div>
+                </div>
+        </div>
+        <div class="logoreseau">
+                <a href=""><i class="fab fa-linkedin-in fa-2x black"></i></a>
+                <a href=""><i class="fab fa-tiktok fa-2x black"></i></a>
+        </div>
+        </center>
+
+        <!-- Copyright-->
+
+        <hr class="hrmargindouble">
+        <div class="copyright black">
+                <div>2021 SHADOW ARCHITECTURE. ALL RIGHTS RESERVED.</div>
+                <div>DESIGNED BY SHADOW THEMES.</div>
+        </div>
+        <hr class="hrmargindouble">
+{% endblock %}

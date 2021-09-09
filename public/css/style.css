@@ -1,0 +1,779 @@
+                                                                                    /* Global CSS */
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 1920px;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+}
+
+.white {
+    color: white;
+}
+
+.gold {
+    color: rgb(165, 113, 0);
+}
+
+.black {
+    color: black;
+}
+
+hr {
+    color: rgb(165, 113, 0);
+    opacity: 100%;
+    
+}
+
+.hrmargintop {
+    margin-top: 0;
+}
+
+.hrmarginbot {
+    margin-bottom: 0;
+}
+
+.hrmargindouble {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+                                                                                    /* HOME */
+
+
+.carousel-acceuil {
+    max-width: auto;
+    max-height: 952px;    /* <=== Need to change ("auto" / 1700px ) for responsive */
+}
+
+/* TILLE HOME ( DISABLE ) */
+
+.titreacceuil {
+    color: rgb(165, 113, 0);
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size:3em;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    left: 46%;
+    top: 08%;
+}
+
+/* ADD/EDIT HOME CAROUSEL */
+
+div.formcontain-acceuil {
+    display: flex;
+    background-image: url("https://i.ibb.co/vsFd7SM/6769921-amazing-forest-waterfall.jpg");
+    height: 769px;
+}
+
+.formblock-acceuil {
+    margin: auto;
+    font-weight: bold;
+    padding-bottom: 2.4em;
+    width: 600px;
+    border: solid 2px rgb(165, 113, 0);
+    background-color: rgba(255, 255, 255, 0.644);
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+/* Button SEND */
+
+div#acceuil_carousel button.btn {
+    display: flex;
+    margin: auto;
+}
+
+                                                                                    /* NAV BAR */
+
+/* Section Header */
+
+.menu {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    max-width: 1900px;
+}
+
+.menuderoulant {
+    color: rgb(165, 113, 0);
+    font-weight: bold;
+}
+
+a.lagalerie {
+    text-decoration: none;
+    color: white;
+}
+
+a.lagalerie:hover {
+    color: white;
+}
+
+.hrmenuderoulant {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: black;
+    opacity: 100%;
+    height: 0.5px;
+    border: solid 0px;
+}
+
+.dropdown-menu {
+    margin-right: 20%;
+}
+
+.userpanelright {
+    margin-top: 0.5vh;
+    margin-right: 0.8vh;
+}
+
+/* LOGO BISON */
+
+.logo {
+    width: 50px;
+    margin-right: 2vh;
+}
+
+/* WELCOME MESSAGE */
+
+.welcome {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0.8em;
+    margin-left: -5em;
+    font-weight: bold;
+}
+
+.btn-dark {
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: rgb(165, 113, 0);
+}
+
+/* Button Nav Bar */
+
+.btn-dark:hover {
+    color: rgb(255, 255, 255);
+    border: solid 1px black;
+    background-color: rgb(165, 113, 0);
+}
+
+.btn-dark a {
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(165, 113, 0);
+}
+
+.btn-contact {
+    margin-left: 1em;
+}
+
+.btn-login {
+    margin-left: 1.5vh;
+}
+
+.btn-group {
+    margin-left: 1em;
+}
+
+.titre {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size:3em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.titregalerie {
+    background-image: url("https://i.ibb.co/vsFd7SM/6769921-amazing-forest-waterfall.jpg");
+    width: 1904px;
+    height: 550px;
+    color: #fff;
+}
+
+.show {
+    padding-bottom: 0;
+}
+
+                                                                                    /* GALLERY */
+
+/* Section Galerie d'images */
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.hrarticle {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.blocarticle {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 1em;
+    position: relative;
+}
+
+.galerie {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.4vh;
+}
+
+/* Pagination */
+
+.page-link {
+    color: rgb(165, 113, 0);
+}
+
+.page-link:hover {
+    color: #fff;
+    background-color: rgb(165, 113, 0);
+    border: solid 1px rgb(0, 0, 0);
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: rgb(165, 113, 0);
+    border: solid 1px rgb(0, 0, 0);
+}
+
+/* Opacity #2 */
+
+figure {
+	background: #fff;
+	overflow: hidden;
+    border: solid 2px rgb(165, 113, 0);
+}
+
+.hover12 figure {
+	background: rgba(165, 113, 0, 0.795);
+}
+.hover12 figure img {
+	opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    -webkit-transform: scale(1.5);
+	transform: scale(1.2);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover12 figure:hover img {
+	opacity: .6;
+    -webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+.imgarticle {
+    margin-bottom: -4px;
+    width: 550px;
+	height: 350px;
+}
+
+.h3article {
+    margin-top: -1.2em;
+    position: absolute;
+    padding-left: 6.8em;
+    font-weight: bold;
+}
+
+.h5article {
+    padding-top: 0.5em;
+    font-weight: bold;
+}
+
+.datearticle {
+    font-weight: bold;
+}
+
+h5 {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Section Galerie Show */
+
+div.centerimgshow {
+    background-color: rgb(255, 255, 255);
+}
+
+.centerimgshow {
+    padding-bottom: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.imgshow {
+    width: 66%;
+    height: auto;
+    -webkit-transform: scale(1.5);
+	transform: scale(1);
+    border: solid 2px rgb(165, 113, 0);
+}
+
+.titlebanniere {
+    width: auto;
+    height: auto;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+}
+
+.titleshow 
+{
+    font-weight: bold;
+    text-align: center;
+    font-size:3em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.boxshow {
+    width: 1903px;
+    height: 400px;
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.miniboxshow {
+    width: 350px;
+    min-height: 200px;
+    border: solid 2px rgb(165, 113, 0);
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.miniboxgold {
+    text-transform: uppercase;
+}
+
+.miniboxshowpadding {
+    padding-top: 2em;
+}
+
+h5 {
+    text-align: center;
+    margin-top: 1em;
+    font-size: medium;
+}
+
+.dateshow {
+    color: rgb(165, 113, 0);
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding-bottom: 1em;
+}
+
+/* Show Gallery */
+
+.faview {
+    margin-left: 0.7em;
+}
+
+.faedit {
+    margin-left: 0.7em;
+}
+
+.fasuppr {
+  margin-left: 1.3em;  
+}
+
+.editshow {
+    margin: 2vh;
+}
+
+.editshow a {
+    text-decoration: none;
+    width: 94px;
+    margin-left: 2vh;
+}
+
+/* ADD_EDIT Gallery */
+
+.formblockarticle {
+    font-weight: bold;
+    margin: auto;
+    width: 600px;
+    border: solid 2px rgb(165, 113, 0);
+    background-color: rgba(255, 255, 255, 0.644);
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    vertical-align: middle;
+}
+
+div.formcontainarticle {
+    display: flex;
+    background-image: url("https://i.ibb.co/vsFd7SM/6769921-amazing-forest-waterfall.jpg");
+    height: 769px;
+}
+
+.titreedit {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Button SEND */
+
+div.formcontainarticle button.btn-register {
+    display: flex;
+    margin: auto;
+}
+
+.col-form-label, .form-label {
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+/* ALL LIST HOME/GALLERY/PROJET */
+
+td {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+th {
+    color: rgb(165, 113, 0);
+    text-transform: uppercase;
+}
+
+                                                                                    /* PROJETS */
+
+/* Section Les Projets */
+
+.projet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.6vh;
+    position: relative;
+    margin-left: 1vh;
+    margin-right: 1vh;
+}
+
+.imgprojet {
+    margin-bottom: -4px;
+    width: 750px;
+	height: 500px;
+}
+
+.h3projet {
+    margin-top: -1.2em;
+    position: absolute;
+    padding-left: 9.2em;
+}
+
+.h5projet {
+    padding-top: 0.5em;
+}
+
+.fa-arrow-right {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 34%;
+    left: 44.6%;
+}
+
+h5 {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Projet Show */
+
+.carousel-projet {
+    max-width: 1400px;
+    max-height: 950px;      /* <=== Need to change ("auto") for responsive */
+    margin: auto;
+    border-left: solid 2px rgb(165, 113, 0);
+    border-right: solid 2px rgb(165, 113, 0);
+}
+
+.bloc-carousel-projet {
+    background-color: rgb(0, 0, 0);
+}
+
+.editshow-projet {
+    background-color: rgb(255, 255, 255);
+    padding: 3vh;
+}
+
+.editshow-projet a {
+    margin-left: 1vh;
+}
+
+/* ADD_EDIT Projet */
+
+.formblock {
+    margin: auto;
+    font-weight: bold;
+    padding-bottom: 1em;
+    width: 600px;
+    border: solid 2px rgb(165, 113, 0);
+    background-color: rgba(255, 255, 255, 0.644);
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
+    vertical-align: middle;
+}
+
+.listuppercase{
+    text-transform: uppercase;
+}
+
+div.formcontain {
+    display: flex;
+    background-image: url("https://i.ibb.co/vsFd7SM/6769921-amazing-forest-waterfall.jpg");
+    height: 769px;
+}
+
+div.formcontain button.btn-register {
+    display: flex;
+    margin: auto;
+}
+
+.btn-add-projet {
+    text-align: center;
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+button.btn-add-projet {
+    position: absolute;
+    left: 44%;
+}
+
+                                                                                    /* FOOTER */
+
+/* Section Footer */
+
+.blocfooter {
+    background-color: rgb(255, 255, 255);
+    max-width: 1920px;
+    height: 150px;
+    margin-left: 14%;
+    margin-right: 14%;
+}
+
+.sousblocfooter {
+    font-weight: bold;
+    margin-bottom: -0.5em;
+}
+
+.logoblanc {
+    width: 70px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0.8em;
+}
+
+.logoreseau a {
+    padding: 1em;
+}
+
+.logoreseau {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.copyright {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.copyright div {
+    margin: 4px;
+}
+
+                                                                                    /* REGISTRATION & LOGIN */
+
+div.blocloginwallpaper {
+    background-image: url("https://i.ibb.co/vsFd7SM/6769921-amazing-forest-waterfall.jpg");
+    height: 771px;
+    display: flex;
+}
+
+.formlogin {
+    display: flex;
+    margin: auto; 
+}
+
+.bloclogin {
+    vertical-align: middle;
+    border: solid 2px rgb(165, 113, 0);
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-right: 3em;
+    padding-left: 3em;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.644);
+    width: 500px;
+}
+
+div.bloclogin button.btn-register {
+    display: flex;
+    margin: auto;
+}
+
+/* Register */
+
+div.blocregisterwallpaper {
+    background-image: url("https://i.ibb.co/vsFd7SM/6769921-amazing-forest-waterfall.jpg");
+    height: 920px;
+    display: flex;
+}
+
+.blocregister {
+    margin: auto;
+    vertical-align: middle;
+    border: solid 2px rgb(165, 113, 0);
+    padding-top: 2em;
+    padding-bottom: 1em;
+    padding-right: 3em;
+    padding-left: 3em;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.644);
+    width: 550px;
+}
+
+.btn-register {
+    color: rgb(165, 113, 0);
+    background-color: #ffffff;
+    border: solid 1px black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-register:hover {
+    color: #fff;
+    background-color: rgb(165, 113, 0);
+}
+
+div.blocregister button.btn-register {
+    display: flex;
+    margin: auto;
+}
+
+.form-check{
+    text-align: center;
+}
+
+                                                                                    /* PROFIL */
+
+div.containblocuser {
+    background-image: url("https://i.ibb.co/vsFd7SM/6769921-amazing-forest-waterfall.jpg");
+    height: 769px;
+    display: flex;
+}
+
+div.blocuser {
+    border: solid 2px rgb(165, 113, 0);
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 2em;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.644);
+    width: 500px;
+    margin: auto;
+    vertical-align: middle;
+}
+
+.usertitle {
+    color: rgb(165, 113, 0);
+}
+
+.userimage {
+    width: 150px;
+    height: 150px;
+    border: solid 2px rgb(165, 113, 0);
+    background-color: black;
+    margin-left: 9em;
+    margin-bottom: 2em;
+    
+}
+
+div.mb-3 {
+    text-align: left;
+}
+
+                                                                                    /* CONTACT */
+
+.googlemap {
+    max-width: 1400px;
+}
+
+                                                                                    /* ALERTE MESSAGES */
+
+.alert {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: transparent;
+    border: none;
+}
+
+
+/* Alerte Login */
+
+.alert-login-succes {
+    background-color: rgb(255, 255, 255);
+    color: green;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    padding-left: 5.7em;
+    padding-bottom: 0.5em;
+    padding-top: 0;
+}
+
+.alert-dismissible .close {
+    padding: 0;
+
+    position: relative;
+}
+
+/* Alerte Register */
+
+.alert-register-success {
+    background-color: rgb(255, 255, 255);
+    color: green;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    padding-left: 5.7em;
+    padding-bottom: 0.5em;
+    padding-top: 0;
+}
+
+/* Alerte Article */ 
+
+.alert-article-success {
+    background-color: rgb(255, 255, 255);
+    color: green;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    padding-left: 5.7em;
+    padding-bottom: 0.5em;
+}
+
+

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List of Gallery{% endblock %}
+
+{% block body %}
+
+    <!-- Title -->
+
+    <hr class="hrtop">
+    <h1 class="titreedit">List User</h1>
+    <hr class="hrmarginbot">
+
+    <!-- Table Profil -->
+
+    <table class="table table-dark table-bordered table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Email</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">City</th>
+            <th scope="col">Zip Code</th>
+            <th scope="col">Number</th>
+            <th scope="col">Supprimer</th>
+          </tr>
+        </thead>
+
+        <!-- Link in Loop -->
+
+        {% for user in users %}
+            <tbody>
+                <tr>
+                <th scope="row">{{ user.id }}</th>
+                <td class="listuppercase">{{ user.email }}</td>
+                <td class="listuppercase">{{ user.fname }}</td>
+                <td class="listuppercase">{{ user.name }}</td>
+                <td class="listuppercase">{{ user.adress }}</td>
+                <td class="listuppercase">{{ user.city }}</td>
+                <td class="listuppercase">{{ user.zipcode }}</td>
+                <td class="listuppercase">{{ user.number }}</td>
+                <td>
+                    <a class="fasuppr" href="{{ path('user_delete' , {'id' :user.id})}}"> <i class="fas fa-trash-alt"></i></a>
+                </td>
+                </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+{% endblock %}

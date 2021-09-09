@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil d'utilisateur{% endblock %}
+
+{% block body %}
+
+    <!-- Title -->
+
+    <hr class="hrmargintop">
+        <h1 class="titreedit">User Profil</h1>
+    <hr class="hrmarginbot">
+
+    <!-- If User On or Not -->
+
+    <!-- Block User profil -->
+
+    {% if app.user %}
+
+            <div class="containblocuser">
+                    <div class="blocuser">
+                        <div class="userimage">
+                            <img src="" alt="">
+                        </div> 
+                        <div class="usertitle">FIRST NAME :</div>
+                            <p class="">{{ app.user.fname }}</p>
+                        <div class="usertitle">NAME : </div>
+                            <p class="">{{ app.user.name}}</p>
+                        <div class="usertitle">EMAIL : </div>
+                            <p class="">{{ app.user.email }}</p>
+                        <div class="usertitle">ADDRESS : </div>
+                            <p class="">{{ app.user.adress }}</p>
+                        <div class="usertitle">CITY : </div>
+                            <p class="">{{ app.user.city }}</p>
+                        <div class="usertitle">ZIP CODE : </div>
+                            <p class="">{{ app.user.zipcode }}</p>
+                        <div class="usertitle">NUMBER : </div>
+                            <p class="">{{ app.user.number }}</p>
+                    </div>
+                        
+            </div>
+
+        <hr class="hrmargindouble">
+        
+    {% else %}
+
+    {% endif %}
+
+{% endblock %}

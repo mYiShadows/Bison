@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <hr class="hrmargindouble">
+    <div class="titlebanniere">
+        <div class="titleshow">
+            <div class="gold">|</div>
+            <div class="white">PROJET</div>
+            <div class="gold">{{projet.titreProjet}}</div>
+        </div>
+    </div>
+    <hr class="hrmargindouble">
+
+    <!-- Block Carousel -->
+
+        <div class="blocprojetcarousel">
+
+                        <!-- If User On or Not -->
+
+                        {% if app.user %}
+                                <center class="editshow-projet">
+                                        <a class="btn btn-dark" href="{{ path('projets_index')}}"><i class="fas fa-arrow-left"></i> Return</a>
+                                        <a class="btn btn-dark" href="{{ path('projet_edit' , {'id' :projet.id})}}"><i class="fas fa-edit"></i> Edit</a>
+                                        <a class="btn btn-dark" href="{{ path('projet_delete' , {'id' :projet.id})}}"><i class="fas fa-trash-alt"></i> Delete</a>
+                                </center>
+                        {% else %}
+                                <center class="editshow-projet">
+                                        <a class="btn btn-dark" href="{{ path('projets_index')}}"><i class="fas fa-arrow-left"></i> Return</a>
+                                </center>
+                        {% endif %}
+
+                <!-- Carousel Code -->
+
+                <hr class="hrmargindouble">
+                <div id="carouselExampleIndicators" class="carousel slide bloc-carousel-projet" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                                {% for image in projet.imageProjets %}
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" {{ loop.first ? 'class="active"' : '' }}></li>  
+                                {% endfor %}
+                        </ol>
+                        <div class="carousel-inner image-rognage carousel-projet">
+                                {% for image in projet.imageProjets %}
+                                        <div class="carousel-item {{ loop.first ? 'active' : '' }}">
+                                                <img class="d-block w-100 img-fluid centre" src="{{ image.image }}" alt="{{ image.title }}">
+                                        </div>
+                                {% endfor %}
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon carousel-control-show" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                        </a>
+                </div>
+        </div>
+
+          
+    <hr class="hrarticle">
+
+    <!-- Block Box -->
+
+    <div class="boxshow img-fluid ">
+        <div class="miniboxshow">
+            <h5 class="miniboxshowpadding">|</h5>
+            <h5>ANNEE</h5>
+            <h5 class="miniboxgold gold">{{projet.anneeProjet}}</h5>
+        </div>
+        <div class="miniboxshow">
+            <h5 class="miniboxshowpadding">|</h5>
+            <h5>LOCATION</h5>
+            <h5 class="miniboxgold gold">{{projet.locationProjet}}</h5>
+        </div>
+        <div class="miniboxshow">
+            <h5 class="miniboxshowpadding">|</h5>
+            <h5>CLIENT</h5>
+            <h5 class="miniboxgold gold">{{projet.client}}</h5>
+        </div>
+        <div class="miniboxshow">
+            <h5 class="miniboxshowpadding">|</h5>
+            <h5>CREATEUR</h5>
+            <h5 class="miniboxgold gold">{{projet.createur}}</h5>
+        </div>
+    </div>
+    <hr class="hrmargindouble">
+
+    <!-- Block Footer -->
+    
+    <center>
+        <div class="blocfooter">
+                <div class="sousblocfooter">
+                                <img src="https://i.ibb.co/Q6X0BZp/Noirtransparent.png" alt="" class="logoblanc"/>
+                </div>
+                <div class="sousblocfooter">
+                        <div>+33741881818</div>
+                        <div>shadow-projet@entreprise.fr</div>
+                        <div>67000 Strasbourg, 10 rue des champs, FRA </div>
+                </div>
+        </div>
+        <div class="logoreseau">
+                <a href=""><i class="fab fa-linkedin-in fa-2x black"></i></a>
+                <a href=""><i class="fab fa-tiktok fa-2x black"></i></a>
+        </div>
+        </center>
+
+        <!-- Copyright-->
+
+        <hr class="hrmargintop">
+        <div class="copyright black">
+                <div>2021 SHADOW ARCHITECTURE. ALL RIGHTS RESERVED.</div>
+                <div>DESIGNED BY SHADOW THEMES.</div>
+        </div>
+        
+{% endblock %}

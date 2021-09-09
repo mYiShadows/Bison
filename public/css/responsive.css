@@ -1,0 +1,50 @@
+                                                                                    /* Responsive Css Max-Width */
+
+@media screen and (max-width: 1600px) {
+
+    /* Menu NavBar */
+
+    .userpanelright {
+        margin-left: -4vh;
+    }
+} 
+
+@media screen and (max-width: 1400px) {
+
+    /* Menu NavBar */
+
+    .userpanelright {
+        margin-left: -8vh;
+    }
+}
+
+@media screen and (max-width: 1110px) {
+
+    /* Menu NavBar */
+
+    .menu {
+        display: none;
+    }
+    
+
+} 
+
+
+                                                                                    /* Responsive Css Min-Width */
+
+
+@media screen and (min-width: 1110px) {
+
+/* Menu NavBar */
+
+  .navbar{
+    display: none;
+    margin-left: 6em;
+  }
+
+  a .nav-link {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+  }
+  
+}

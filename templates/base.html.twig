@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- Responsive -->
+
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+
+            <!-- Link Boostrap & CDN 4/5 -->
+
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+                integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+                crossorigin="anonymous" />
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+            <!-- Feuille de style css -->
+
+            <link rel="stylesheet" href="{{ asset("css/style.css") }}">
+            <link rel="stylesheet" href="{{ asset("css/responsive.css") }}">
+
+            <!-- Police Google Roboto -->
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="js/alerte.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        {% endblock %}
+    </head>
+    <body>
+
+
+        <!-- Menu navbar -->
+        
+        <div class="menu">
+            <div class="userpanelleft">
+                <img src="https://i.ibb.co/Q6X0BZp/Noirtransparent.png" alt="" class="logo"/>
+
+            <!-- Button -->
+
+                <a href="{{ path('acceuil_index')}}" class="btn btn-dark">Home</a>
+
+            <!-- Button Dropdown La Galerie -->
+
+                <div class="btn-group dropdown">
+                    <button type="button" class="btn btn-dark">
+                      <a class="lagalerie" href="{{ path('articles_index')}}">Gallery</a>
+                    </button>
+                </div>
+
+                <!-- Button Dropdown Les Projets -->
+
+                <div class="btn-group dropdown">
+                    <button type="button" class="btn btn-dark">
+                      <a class="lagalerie" href="{{ path('projets_index')}}">Projets</a>
+                    </button>
+                    <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="sr-only">Toggle Dropright</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        {{ render_esi(controller('App\\Controller\\ProjetController::menu'))}}
+                    </div>
+                </div>
+            
+            <!-- Button Contact-->
+            
+                    <a href="{{ path('contact')}}" class="btn btn-dark btn-contact">Contact</a>
+            </div>
+
+            <!-- Welcome message -->
+
+            {% if app.user %}
+                    <span class="gold welcome"> Welcome {{ app.user.name }} {{ app.user.fname }}</span>
+            {% endif %}
+
+            <!-- Bouton Register/Login/Logout-->
+
+            <div class="userpanelright">
+                {% if app.user %}
+                    <a href="{{ path('app_logout')}}" class="btn btn-dark">Logout</a>
+                {% else %}
+                    <a href="{{ path('app_register')}}" class="btn btn-dark">Register</a>
+                    <a href="{{ path('app_login')}}" class="btn btn-dark btn-login">Login</a>
+                {% endif %}
+
+            <!-- If User On or Not -->
+
+            <!-- Bouton Dropdown PROFIL-->
+
+            {% if app.user %}
+                <div class="btn-group dropdown">
+                    <button type="button" class="btn btn-dark">
+                    Profil
+                    </button>
+                    <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropright</span>
+                    </button>
+                    <div class="dropdown-menu">
+                            <a class="dropdown-item menuderoulant" href="{{ path('profil') }}">Profil</a>
+                            <hr class="hrmenuderoulant">
+                            <a class="dropdown-item menuderoulant" href="{{ path('profil_admin') }}">List Of Users</a>
+                            <hr class="hrmenuderoulant"> 
+                    </div>
+                </div>            
+            {% endif %}
+
+            <!-- Button Dropdown ADMIN PANEL-->
+
+            {% if is_granted('ROLE_ADMIN') %}
+
+                <div class="btn-group dropdown">
+                    <button type="button" class="btn btn-dark">
+                    Admin Panel
+                    </button>
+                    <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropright</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item menuderoulant" href="{{ path('acceuil_add') }}"><i class="fas fa-plus"></i> Add Img Carousel</a>
+                        <a class="dropdown-item menuderoulant" href="{{ path('acceuil_admin') }}"><i class="fas fa-address-book"></i> List Home</a>
+                        <hr class="hrmenuderoulant">
+                        <a class="dropdown-item menuderoulant" href="{{ path('article_add') }}"><i class="fas fa-plus"></i> Add Article Gallery</a>
+                        <a class="dropdown-item menuderoulant" href="{{ path('article_admin') }}"><i class="fas fa-address-book"></i> List Gallery</a>
+                        <hr class="hrmenuderoulant">
+                        <a class="dropdown-item menuderoulant" href="{{ path('projet_add') }}"><i class="fas fa-plus"></i> Add Projet</a>
+                        <a class="dropdown-item menuderoulant" href="{{ path('projet_admin') }}"><i class="fas fa-address-book"></i> List Projets</a>
+                        <hr class="hrmenuderoulant">
+                    </div>
+                </div>
+            {% endif %}
+
+            </div>
+
+        </div>
+
+        <!-- Menu Nav Bar Responsive -->
+                 
+        {% if app.user %}
+
+        <div class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+              <div class=" p-4">
+                <a class="nav-link gold" href="{{ path('acceuil_index')}}"><i class="fas fa-home"></i> Home</a>
+                <a class="nav-link gold" href="{{ path('articles_index')}}"><i class="fas fa-images"></i> Gallery</a>
+                <a class="nav-link gold" href="{{ path('projets_index')}}"><i class="fas fa-archive"></i> Projets</a>
+                <a class="nav-link gold" href="{{ path('contact')}}"><i class="fas fa-address-book"></i> Contact</a>
+                <a class="nav-link gold" href="{{ path('profil') }}"><i class="fas fa-id-card"></i> Profil</a>
+                <a class="nav-link gold" href="#"><i class="fas fa-users-cog"></i> Panel Admin</a>
+                <a class="nav-link gold" href="{{ path('app_logout')}}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+              </div>
+            </div>
+            <nav class="navbar justify-content-center">
+              <button class="navbar-toggler gold" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fa-2x gold"></i>
+              </button>
+            </nav>
+          </div>
+
+          {% else %}
+
+          <div class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+              <div class="p-4">
+                <a class="nav-link gold" href="{{ path('acceuil_index')}}"><i class="fas fa-home gold"></i> Home</a>
+                <a class="nav-link gold" href="{{ path('articles_index')}}"><i class="fas fa-images"></i> Gallery</a>
+                <a class="nav-link gold" href="{{ path('projets_index')}}"><i class="fas fa-archive"></i> Projets</a>
+                <a class="nav-link gold" href="{{ path('contact')}}"><i class="fas fa-address-book"></i> Contact</a>
+                <a class="nav-link gold" href="{{ path('app_register')}}"><i class="fab fa-wpforms"></i> Register</a>
+                <a class="nav-link gold" href="{{ path('app_login')}}"><i class="fas fa-sign-in-alt"></i> Login</a>
+              </div>
+            </div>
+            <nav class="navbar justify-content-center">
+              <button class="navbar-toggler gold" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fa-2x gold"></i>
+              </button>
+            </nav>
+          </div>
+
+          {% endif %}
+        
+        {# flash messages #}
+        <center>
+          {% for message in app.flashes('success') %}
+              <div class="alert alert-success alert-dismissible alert-login-succes fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="close button-alert-login" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+          {% endfor %}
+          {% for message in app.flashes('notice') %}
+              <div class="alert alert-success alert-dismissible alert-register-success fade show">
+                  {{ message }}
+                  <button type="button" class="close button-alert-login" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+          {% endfor %}
+        </center>
+
+          {% block body %}
+
+          {% endblock %}
+    </body>
+</html>

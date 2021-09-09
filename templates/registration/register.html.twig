@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% form_theme registrationForm 'bootstrap_5_layout.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+    <!-- Title -->
+
+    <hr class="hrmargintop">
+    <h1 class="titreedit">Register</h1>
+    <hr class="hrmarginbot">
+
+    <!-- Block Register -->
+
+    <div class="blocregisterwallpaper">
+        <div class="blocregister">
+            {{ form(registrationForm) }}
+        </div>
+    </div>
+
+{% endblock %}
+

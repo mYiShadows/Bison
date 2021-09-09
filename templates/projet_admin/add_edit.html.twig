@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+{% form_theme formProjet 'bootstrap_5_layout.html.twig' %}
+
+{% block title %}Add/Edit Projet{% endblock %}
+
+{% block body %} 
+
+<!-- Banner Title -->
+
+    {% if editMode %}
+        <hr class="hrmargintop">
+        <h1 class="titreedit">Edit Projet</h1>
+        <hr class="hrmarginbot">
+    {% else %}
+        <hr class="hrmargintop">
+        <h1 class="titreedit">Add Projet</h1>
+        <hr class="hrmarginbot">
+    {% endif %}
+
+<!-- Bloc Form -->
+
+    <div class="formcontain">
+        <div class="formblock">
+            {{ form(formProjet) }}
+        </div>
+    </div>
+        <hr class="hrmargindouble">
+        
+{% endblock %}
